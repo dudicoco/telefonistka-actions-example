@@ -6,3 +6,4 @@ podTemplate:
 
       env:
         FOO: barzz
+        WOW: true
