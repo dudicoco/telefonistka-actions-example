@@ -5,5 +5,4 @@ podTemplate:
         tag: 6.1.4
 
       env:
-        FOO: barzz
-        WOW: true
+        FOO: bar
