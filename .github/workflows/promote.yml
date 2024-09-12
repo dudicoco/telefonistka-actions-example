@@ -11,6 +11,7 @@ on:
 
 jobs:
   promote:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
     - uses: Oded-B/telefonistka-action@main
