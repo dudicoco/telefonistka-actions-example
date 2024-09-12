@@ -7,3 +7,4 @@ podTemplate:
       env:
         FOO: barzz
         WOW: true
+        K: o
