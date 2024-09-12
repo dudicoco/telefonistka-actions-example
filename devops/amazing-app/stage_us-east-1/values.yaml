@@ -6,4 +6,4 @@ podTemplate:
 
       env:
         FOO: bar
-        COCO: melon
+        COCO: melonz
