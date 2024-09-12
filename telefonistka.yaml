@@ -2,26 +2,26 @@ promotionPaths:
 - sourcePath: workspace/
   promotionPrs:
   - targetPaths:
-    - clusters/dev_us-east-1/
-- sourcePath: 'clusters/staging/[^/]*/[^/]*/' # This will start a promotion to prod from any "staging" path
+    - devops/.*/dev_us-east-1
+- sourcePath: devops/.*/stage_us-east-1 # This will start a promotion to prod from any "stage" path
   conditions:
     prHasLabels:
     - quick_promotion # This flow will run only if PR has "quick_promotion" label, see targetPaths below
   promotionPrs:
   - targetPaths:
-    - clusters/prod_ap-southeast-2/ # First PR for only a single cluster
+    - devops/.*/prod_ap-southeast-2/ # First PR for only a single cluster
   - targetPaths:
-    - clusters/prod_us-east-1/ # 2nd PR will sync all remaining clusters
-    - clusters/prod_eu-central-1/
-- sourcePath: 'clusters/staging/[^/]*/[^/]*/' # This flow will run on PR without "quick_promotion" label
+    - devops/.*/prod_us-east-1/ # 2nd PR will sync all remaining clusters
+    - devops/.*/prod_eu-central-1/
+- sourcePath: devops/.*/stage_us-east-1 # This flow will run on PR without "quick_promotion" label
   promotionPrs:
   - targetPaths:
-    - clusters/prod_ap-southeast-2/ # Each cluster will have its own promotion PR
+    - devops/.*/prod_ap-southeast-2/ # Each cluster will have its own promotion PR
   - targetPaths:
-    - clusters/prod_us-east-1/
+    - devops/.*/prod_us-east-1/
   - targetPaths:
-    - clusters/prod_eu-central-1/
+    - devops/.*/prod_eu-central-1/
 dryRunMode: false
 autoApprovePromotionPrs: false
 toggleCommitStatus:
-  override-terrafrom-pipeline: "github-action-terraform"
+  override-terrafrom-pipeline: github-action-terraform
