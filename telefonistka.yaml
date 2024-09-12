@@ -2,8 +2,8 @@ promotionPaths:
 - sourcePath: workspace/
   promotionPrs:
   - targetPaths:
-    - devops/.*/dev_us-east-1
-- sourcePath: devops/.*/stage_us-east-1 # This will start a promotion to prod from any "stage" path
+    - devops/.*/dev_us-east-1/
+- sourcePath: devops/.*/stage_us-east-1/ # This will start a promotion to prod from any "stage" path
   conditions:
     prHasLabels:
     - quick_promotion # This flow will run only if PR has "quick_promotion" label, see targetPaths below
