@@ -1,0 +1,5 @@
+podTemplate:
+  containers:
+    amazing-app:
+      env:
+        S3_BUCKET: stage-2

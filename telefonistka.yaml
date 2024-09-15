@@ -1,30 +1,30 @@
 promotionPaths:
-- sourcePath: workspace/
+- sourcePath: workspace/.*/shared/
   conditions:
     autoMerge: true
   promotionPrs:
   - targetPaths:
-    - devops/dev_us-east-1/
-- sourcePath: devops/stage_us-east-1/ # This will start a promotion to prod from any "stage" path
+    - devops/dev_us-east-1/.*/shared/
+- sourcePath: devops/stage_us-east-1/.*/shared/ # This will start a promotion to prod from any "stage" path
   conditions:
     prHasLabels:
     - quick_promotion # This flow will run only if PR has "quick_promotion" label, see targetPaths below
   promotionPrs:
   - targetDescription: Prod Tier 1
     targetPaths:
-    - devops/prod_ap-southeast-2/ # First PR for only a single cluster
+    - devops/prod_ap-southeast-2/.*/shared/ # First PR for only a single cluster
   - targetDescription: Prod Tier 2
     targetPaths:
-    - devops/prod_us-east-1/ # 2nd PR will sync all remaining clusters
-    - devops/prod_eu-central-1/
-- sourcePath: devops/stage_us-east-1 # This flow will run on PR without "quick_promotion" label
+    - devops/prod_us-east-1/.*/shared/ # 2nd PR will sync all remaining clusters
+    - devops/prod_eu-central-1/.*/shared/
+- sourcePath: devops/stage_us-east-1/.*/shared/ # This flow will run on PR without "quick_promotion" label
   promotionPrs:
   - targetPaths:
-    - devops/prod_ap-southeast-2/ # Each cluster will have its own promotion PR
+    - devops/prod_ap-southeast-2/.*/shared/ # Each cluster will have its own promotion PR
   - targetPaths:
-    - devops/prod_us-east-1/
+    - devops/prod_us-east-1/.*/shared/
   - targetPaths:
-    - devops/prod_eu-central-1/
+    - devops/prod_eu-central-1/.*/shared/
 dryRunMode: false
 autoApprovePromotionPrs: false
 toggleCommitStatus:
