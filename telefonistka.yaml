@@ -25,6 +25,7 @@ promotionPaths:
     - devops/prod_us-east-1/amazing-app/shared/
   - targetPaths:
     - devops/prod_eu-central-1/amazing-app/shared/
+  ComponentPathExtraDepth: 0
 dryRunMode: false
 autoApprovePromotionPrs: false
 toggleCommitStatus:
