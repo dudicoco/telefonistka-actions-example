@@ -1,10 +1,10 @@
 promotionPaths:
-- sourcePath: workspace/.*/shared/
+- sourcePath: workspace/amazing-app/shared/
   conditions:
     autoMerge: true
   promotionPrs:
   - targetPaths:
-    - devops/dev_us-east-1/.*/shared/
+    - devops/dev_us-east-1/amazing-app/shared/
 - sourcePath: devops/stage_us-east-1/amazing-app/shared/ # This will start a promotion to prod from any "stage" path
   conditions:
     prHasLabels:
@@ -12,11 +12,11 @@ promotionPaths:
   promotionPrs:
   - targetDescription: Prod Tier 1
     targetPaths:
-    - devops/prod_ap-southeast-2/.*/shared/ # First PR for only a single cluster
+    - devops/prod_ap-southeast-2/amazing-app/shared/ # First PR for only a single cluster
   - targetDescription: Prod Tier 2
     targetPaths:
-    - devops/prod_us-east-1/.*/shared/ # 2nd PR will sync all remaining clusters
-    - devops/prod_eu-central-1/.*/shared/
+    - devops/prod_us-east-1/amazing-app/shared/ # 2nd PR will sync all remaining clusters
+    - devops/prod_eu-central-1/amazing-app/shared/
 - sourcePath: devops/stage_us-east-1/amazing-app/shared/ # This flow will run on PR without "quick_promotion" label
   promotionPrs:
   - targetPaths:
