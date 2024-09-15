@@ -7,3 +7,4 @@ podTemplate:
       env:
         FOO: bar
         JAMBA: layaz
+        NEW: true
