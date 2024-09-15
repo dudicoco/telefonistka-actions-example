@@ -6,3 +6,4 @@ podTemplate:
 
       env:
         FOO: bar
+        TEST: true
