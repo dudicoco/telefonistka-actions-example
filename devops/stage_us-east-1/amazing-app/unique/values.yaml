@@ -2,4 +2,4 @@ podTemplate:
   containers:
     amazing-app:
       env:
-        S3_BUCKET: stage
+        S3_BUCKET: stage-new
