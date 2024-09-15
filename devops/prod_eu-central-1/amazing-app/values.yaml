@@ -6,4 +6,5 @@ podTemplate:
 
       env:
         FOO: bar
-        JAMBA: laya
+        JAMBA: layaz
+        NEW: true
