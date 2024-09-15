@@ -7,4 +7,4 @@ podTemplate:
       env:
         FOO: bar
         TEST: false
-        NEW: yeahz
+        NEW: yeahzz
